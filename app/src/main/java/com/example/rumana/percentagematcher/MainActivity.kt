@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     var userinput: String? = null
     var divisionResult: Int? = null
     var modularResult:Int? = null
-    var barValue: Int?= null
+    var barValue: Int= 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +38,11 @@ class MainActivity : AppCompatActivity() {
     private fun getPercentage() {
         divisionResult = (userinput?.toInt())?.div(20)
         modularResult = userinput?.toInt()?.mod(20)
+        barValue = this!!.divisionResult!!
         Log.d("user", divisionResult?.toString()+ " : "+ modularResult)
+        if (modularResult!! <15 && modularResult!! >=5 ){
+
+        }
 
 
 
