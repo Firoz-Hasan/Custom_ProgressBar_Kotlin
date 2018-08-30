@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     var userinput: String? = null
     var divisionResult: Int? = null
     var modularResult:Int? = null
+    var barValue: Int?= null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +39,8 @@ class MainActivity : AppCompatActivity() {
         divisionResult = (userinput?.toInt())?.div(20)
         modularResult = userinput?.toInt()?.mod(20)
         Log.d("user", divisionResult?.toString()+ " : "+ modularResult)
-        
+
+
 
     }
 }
