@@ -28,8 +28,10 @@
 </LinearLayout>
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:id="@+id/img1"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/ic_0"
         />
 </LinearLayout>
