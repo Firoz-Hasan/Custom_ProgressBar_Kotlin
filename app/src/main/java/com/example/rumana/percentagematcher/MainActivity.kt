@@ -35,25 +35,51 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getPercentage() {
-        divisionResult = (userinput?.toInt())?.div(20)
-        modularResult = userinput?.toInt()?.mod(20)
-
-        Log.d("user", divisionResult?.toString() + " : " + modularResult)
-        //Log.d("user", barValue?.toString())
-
-        if (modularResult!! > 0) {
-
-            barValue = this!!.divisionResult!!.toFloat()
-            if (modularResult!! <= 19 && modularResult!! > 9) {
-                Log.d("user", "asche")
-                barValue = (barValue + 0.5F)
-            }
-
-            Log.d("user", barValue?.toString())
+        if (userinput?.toInt()!! >= 15 && userinput?.toInt()!! < 20) {
+            barValue = 0.5F
             percentageChanger(barValue)
         } else {
-            barValue = this!!.divisionResult!!.toFloat()
-            percentageChanger(barValue)
+
+
+            divisionResult = (userinput?.toInt())?.div(20)
+            modularResult = userinput?.toInt()?.mod(20)
+
+            Log.d("user", divisionResult?.toString() + " : " + modularResult)
+
+            //Log.d("user", barValue?.toString())
+            // according to requirements if user wants range in 10
+            /*   if (modularResult!! > 0) {
+
+               barValue = this!!.divisionResult!!.toFloat()
+               if (modularResult!! <= 19 && modularResult!! > 9) {
+                   Log.d("user", "asche")
+                   barValue = (barValue + 0.5F)
+               }
+
+               Log.d("user", barValue?.toString())
+               percentageChanger(barValue)
+           } else {
+               barValue = this!!.divisionResult!!.toFloat()
+               percentageChanger(barValue)
+           }*/
+
+            // according to requirements if user wants range between 5 and 15
+            if (modularResult == 0) {
+                barValue = divisionResult?.toFloat()!!
+                percentageChanger(barValue)
+                Log.d("user", barValue.toString())
+            } else if (modularResult!! >= 15) {
+                barValue = (divisionResult!! + 1F)
+                percentageChanger(barValue)
+                Log.d("user", barValue.toString())
+            } else if (modularResult!! < 15 && modularResult!! > 4) {
+                barValue = (divisionResult!! + 0.5F)
+                percentageChanger(barValue)
+                Log.d("user", barValue.toString())
+            } else {
+                barValue = divisionResult?.toFloat()!!
+                percentageChanger(barValue)
+            }
         }
 
 
